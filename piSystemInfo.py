@@ -42,14 +42,11 @@ def disk():
     
 cpu_genric_info = cpu_generic_details()
 pi_model = subprocess.check_output("cat /proc/device-tree/model | cut -d= -f2", shell=True).replace('\n', '')
-##cpuTemp = float(subprocess.check_output(["vcgencmd measure_temp"], shell=True).split('=')[1].split('\'')[0])
 cpuTemp = subprocess.check_output("vcgencmd measure_temp| cut -d= -f2", shell=True).replace('\n', '')
-##CPUp = psutil.cpu_percent(interval=1)
 CPUp = str(psutil.cpu_percent(interval=1))
 core_frequency = subprocess.check_output("vcgencmd get_config arm_freq | cut -d= -f2", shell=True).replace('\n', '')
 proc_info = subprocess.check_output("nproc", shell=True).replace('\n', '')
 core_volt = subprocess.check_output("vcgencmd measure_volts| cut -d= -f2", shell=True).replace('\n', '')
-##uptime = subprocess.check_output("uptime |awk -F, '{print $1,$2}' | sed 's/:/h, /g;s/^.*up *//; s/ *[0-9]* user.*//;s/[0-9]$/&m/;s/ day. */d, /g'", shell=True)
 uptime = subprocess.check_output("uptime -p |awk -F, '{print $1,$2,$3}'", shell=True).replace('\n', '')
 started = subprocess.check_output("uptime -s", shell=True).replace('\n', '')
 sys_time = datetime.now().strftime("%d %b %Y , %H : %M : %S")
@@ -74,9 +71,4 @@ print (color2 + 'Uptime          : ' + color3 + uptime)
 print (color2 + 'Started on      : ' + color3 + started)
 print (color2 + 'Memory          : ' + color3 + memory())
 print (color2 + 'Disk            : ' + color3 + disk() + color4)
-
-##print 'test'
 print ' '
-##print('\n')
-
-
