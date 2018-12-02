@@ -15,7 +15,7 @@ Raspberry Pi mini cli (command line interface) system info.
 ## Starting : ##
 * change to the **piSystemInfo** directory
 * chmod piSystemInfo.py to 777
-* start script command line:
+* start script on the command line:
 
   `sudo python piSystemInfo.py`
 
