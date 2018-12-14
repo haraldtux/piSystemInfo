@@ -19,6 +19,9 @@ Raspberry Pi mini cli (command line interface) system info.
 
   `sudo python piSystemInfo.py`
 
+## Accessing the Dashboard: ##
+* Since the servlet is running locally, you can access the dashboard by navigating to **http://[you ip]:5000** through your web browser.
+
 ## useful links: ##
 *  https://github.com/giampaolo/psutil
 *  https://github.com/nicmcd/vcgencmd
